@@ -1,4 +1,4 @@
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="inpe.ficha.dao.DepartamentoDao"%>
 <%@page import="inpe.ficha.entity.Departamento"%>
 <%@page import="inpe.ficha.dao.DistritoDao"%>
@@ -14,8 +14,6 @@
 <%@page import="inpe.ficha.dao.AlcaideDao"%>
 <%@page import="inpe.ficha.entity.Alcaide"%>
 <%@page import="java.util.List"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html class="gt-ie8 gt-ie9 not-ie"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
@@ -229,21 +227,21 @@
 
                     </div> <!-- / .navbar-header -->
 
-                    <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
+                    <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse" var="item">
                         <div>
+                            
                             <ul class="nav navbar-nav">
                                 <li>
                                     <form class="navbar-form pull-left"> <fieldset disabled style="border:0px solid">
                                             <input type="text" class="form-control1" placeholder="Oficina Regional:">
 
-                                            <label style="color: #fff; size: 14px;margin-left: 10px;margin-right: 150px" id="penitenciaria" type="text" class="form-control65">Lima</label></fieldset>
+                                            <label style="color: #fff; size: 14px;margin-left: 10px;margin-right: 150px" id="penitenciaria" type="text" class="form-control65">${datos.c_regionPenal}</label></fieldset>
                                     </form>
-
                                 </li>
                                 <li>
                                     <form class="navbar-form pull-left"><fieldset disabled style="border:0px solid">
                                             <input type="text" class="form-control2" placeholder="E.P:">
-                                            <label style="color: #fff; size: 14px;margin-left: 10px;margin-right: 70px" id="penitenciaria" type="text" class="form-control25">Penal de Lurigancho</label></fieldset>
+                                            <label value = "${datos.codPenal}" style="color: #fff; size: 14px;margin-left: 10px;margin-right: 70px" id="penitenciaria" type="text" class="form-control25">${datos.nom_penal}</label></fieldset>
                                     </form>
                                 </li>
                                 <li>
@@ -264,7 +262,7 @@
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
                                             <img src="img/avatar.png" alt=""/>
-                                            <span  var="item" items="${requestScope.listado}">Usuario</span>
+                                            <span  >Usuario</span>
                                         </a>
                                         <ul class="dropdown-menu">
 

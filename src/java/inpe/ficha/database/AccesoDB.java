@@ -14,7 +14,7 @@ public final class AccesoDB {
         try {
             // Parámetros de Connexión
             String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-            String url = "jdbc:sqlserver://DESKTOP-1BAD7L1\\SQLEXPRESS:1433;databaseName=DiseñoGerardo";
+            String url = "jdbc:sqlserver://DESKTOP-1BAD7L1\\SQLEXPRESS:1433;databaseName=PruebaConnection";
             String user = "conexion";
             String pwd = "12345";
             // carga driver en memoria

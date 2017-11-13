@@ -67,7 +67,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<link href=\"pixel/stylesheets/pages.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
       out.write("<link href=\"pixel/stylesheets/rtl.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
       out.write("<link href=\"pixel/stylesheets/themes.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
-      out.write("\n");
+      out.write("<script src=\"js/ValidaLogin.js\" type=\"text/javascript\"></script>\n");
       out.write("\n");
       out.write("<style>\n");
       out.write("#signin-demo {\n");
@@ -172,7 +172,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t</div>\n");
       out.write("\t\t\t\t\n");
       out.write("\t\t\t\t<div class=\"form-actions\">\n");
-      out.write("                                    <button  type=\"submit\" class=\"btn btn-lg btn-labeled btn-danger\">Ingresar</button>\n");
+      out.write("                                    <button  type=\"buttom\" onclick=\"VerificaLogeo();\" class=\"btn btn-lg btn-labeled btn-danger\">Ingresar</button>\n");
       out.write("\t\t\t\t\t<!-- <a href=\"#\" class=\"forgot-password\" id=\"forgot-password-link\" style=\"text-align: right; float: right; margin-top: 10px;\">¿Olvidó su contraseña?</a> -->\n");
       out.write("\t\t\t\t</div>\n");
       out.write("\t\t\t\t\n");

@@ -22,7 +22,7 @@
         <!-- Open Sans font from Google CDN -->
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-        <script src="js/Controlador.js" type="text/javascript"></script>
+        <script src="js/TipoConstru.js" type="text/javascript"></script>
         <!-- Pixel Admin's stylesheets -->
         <link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="assets/stylesheets/pixel-admin.min.css" rel="stylesheet" type="text/css">
@@ -728,11 +728,9 @@
 
 
                                             <div class="tab-pane" id="bs-tabdrop-tab4">
-                                                <div class="2pabe"  ng-controller="ControladorTareas as ctrl"  >
+                                                <div class="2pabe" >
 
                                                     <table class="table table-bordered" >
-
-                                                        <span>{{restantes()}} {{tareas.length}}</span>
                                                         <thead>
                                                             <tr>
                                                                 <th class="col-md-2 col-form-labeel text-secondary" >Tipo</th>
@@ -740,12 +738,8 @@
                                                                 <th class="col-md-2 col-form-label text-secondary">Eliminar</th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
-                                                            <tr ng-repeat="tarea in ctrl.tareas">
-                                                                <td class="col-md-2 col-form-label text-secondary">{{tarea.texto}}</td> 
-                                                                <td class="col-md-2 col-form-label text-secondary">{{tarea.texto2}}</td>
-                                                                <td> <button class=" btn btn-danger " type="submit" ng-click="ctrl.eliminar()">Eliminar</button></td>
-                                                            </tr>
+                                                        <tbody id="tablaTipoConstruPenal">
+                                                        
                                                         </tbody>
                                                     </table>
 

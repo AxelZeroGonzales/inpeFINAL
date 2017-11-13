@@ -5,9 +5,9 @@
  */
 package inpe.ficha.controller;
 
-import inpe.ficha.dao.DepartamentoDao;
+import inpe.ficha.dao.UsuarioDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
+import static java.lang.System.out;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -52,20 +52,25 @@ public class ControlardorServelet extends HttpServlet {
         String name = request.getParameter("txtUserName");
         String pass = request.getParameter("txtPass");
         String destino = "";
-
-        if (name.equalsIgnoreCase("axel") && pass.equalsIgnoreCase("pokemon")) {
-            try {
-                DepartamentoDao dao = new DepartamentoDao();
-                request.setAttribute("departamento", dao.listar());
-                destino = "DatosGenerales.jsp";
-            } catch (Exception e) {
-                request.setAttribute("error", e.getMessage());
+        try {
+            UsuarioDAO usu = new UsuarioDAO();
+            if (usu.validar(name, pass)) {
+                if (usu.permiso(name, pass) == 1) {
+                    int codigo =  usu.penal(name, pass);
+                    request.setAttribute("datos",usu.buscar(codigo));
+                    destino = "DatosGenerales.jsp";                  
+                } else {
+                    destino = "admi.html";
+                }
+            } else {
+                destino = "LoginError.jsp";
             }
+        } catch (Exception e) {
+            out.println("Usuario o contraseñas incorrectos ");
         }
 
         RequestDispatcher rd = request.getRequestDispatcher(destino);
         rd.forward(request, response);
-
     }
 
     private void registrar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

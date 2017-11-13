@@ -28,7 +28,7 @@
 <link href="pixel/stylesheets/pages.min.css" rel="stylesheet" type="text/css"/>
 <link href="pixel/stylesheets/rtl.min.css" rel="stylesheet" type="text/css"/>
 <link href="pixel/stylesheets/themes.min.css" rel="stylesheet" type="text/css"/>
-
+<script src="js/ValidaLogin.js" type="text/javascript"></script>
 
 <style>
 #signin-demo {
@@ -133,7 +133,7 @@
 				</div>
 				
 				<div class="form-actions">
-                                    <button  type="submit" class="btn btn-lg btn-labeled btn-danger">Ingresar</button>
+                                    <button  type="buttom" onclick="VerificaLogeo();" class="btn btn-lg btn-labeled btn-danger">Ingresar</button>
 					<!-- <a href="#" class="forgot-password" id="forgot-password-link" style="text-align: right; float: right; margin-top: 10px;">¿Olvidó su contraseña?</a> -->
 				</div>
 				
